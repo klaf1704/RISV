@@ -20,14 +20,14 @@ List of impairment types:
 - - - 		
 
 Note: You can process all your files accordingly to the ITU-T-REC-P.930, but there are some additional adjustments to created even more impairments, such as more intense blurring or heterogeneous block artefacts. (See descriptions for more details!)
-
-- - - 	
 									 
 All impairments can be further specified. For more details, please have a closer look into the descriptions of the functions.
+
+- - - 	
        
 +  The toolbox is build to process one impairment at one time. If you want to include a second impairment to one file, you need to rerun the toolbox and set the parameter and 	paths accordingly.
 
-+  The naming of the outputfile ist set as followed:
++  The naming of the output file is set as followed:
       The name of the source file is kept and the impairment with it's "degree" is add. The reason behind that is, that you can see the processing steps directly in the file name.
       e.g.: source file: testfile.avi , 1st impairment: edgeB -10, 2nd impairment jerki 6 --> output filename: testfile_edgeB-10_jerki6.avi
         
@@ -46,9 +46,10 @@ All impairments can be further specified. For more details, please have a closer
 1. HOST_RISV_Processing.m ==> Host script to start from. In that script you need to define the path to the source files. Furthermore you choose which impairment you want to process and define the "degree" of the impairment. The selection of the impairment type goes via the command line. You will be ask to define the "degree" of the impairment. 
 
 2. artificalBlockiness.m ==> This function creates block artefacts into the image. You can decide how big your blocks should be (e.g. 8 for 8x8 pixel block or 5 for 5x5 pixel blocks a.s.o). You can further decide, if the impairment should be homogeneous over the whole video as described in the ITU Rec. or you can choose the amount of blocks in a single frame and the amount of frames you want to randomly impaired. Both values are given in percent of the blocks in a frame or number of frames.
-+ e.g. (homogeneous) testfile_blocki_5_framesimp_100_blocksimp_100.avi --> 5x5 pixel blocks, 100% of all frames impaired, 100% of all blocks in a single image impaired
-+ e.g. (heterogeneous) testfile_blocki_20_framesimp_35_blocksimp_30.avi --> 20x20 pixel blocks, 35% of all frames impaired, 30% of all blocks in a single image impaired
-
+<ul>
+<li> e.g. (homogeneous) testfile_blocki_5_framesimp_100_blocksimp_100.avi --> 5x5 pixel blocks, 100% of all frames impaired, 100% of all blocks in a single image impaired </li>
+<li> e.g. (heterogeneous) testfile_blocki_20_framesimp_35_blocksimp_30.avi --> 20x20 pixel blocks, 35% of all frames impaired, 30% of all blocks in a single image impaired </li>
+</ul>
 3. artificalBlurring.m ==> This function creates blurring artefacts into the image. You can choose the degree of blurriness on 6 steps. The filters are given in the ITU-T-REC-P930. I created a 7th filter to choose, for even more blurring. If you choose 'blurr' in the host-script, you can first choose if you want to create blurring according to the ITU-T-REC or via a moving average (for more details on the moving average please see bullet-point 7.).
    
 4. artificalEdgeBusyness.m ==> This function creates a flickering effect on all edges in the video file. Edges means in this case a border between a light and much darker area. The degree of the impairment can be adjusted as well.
@@ -79,7 +80,7 @@ All impairments can be further specified. For more details, please have a closer
 
 - - -
 <h4> Short description of the additional GUI: </h4>
-12. RISV.m ==> This script starts the GUI written for the toolbox. See for further details the short documentation in the pdf file. Note: It works fine on apple machines but need some adjustment for windows machines (ongoing). 
++ RISV.m ==> This script starts the GUI written for the toolbox. See for further details the short documentation in the pdf file. Note: It works fine on apple machines but need some adjustment for windows machines (ongoing). 
 
 
 
